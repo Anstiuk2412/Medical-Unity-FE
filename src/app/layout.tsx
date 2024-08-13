@@ -6,13 +6,16 @@ import theme from '@/theme';
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v14-appRouter";
 import {Header} from "@/components/Header";
 import {AuthProvider} from "@/helpers/context/auth";
+import {fetchIsLoggedIn} from "@/helpers/auth/IsLogin";
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+export default async function RootLayout (props: { children: React.ReactNode }) {
+    const isLoggedIn = await fetchIsLoggedIn()
+
     return (
         <html lang="en">
         <body>
         <AppRouterCacheProvider options={{enableCssLayer: true}}>
-            <AuthProvider>
+            <AuthProvider isLoggedIn={isLoggedIn}>
                 <ThemeProvider theme={theme}>
                     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                     <CssBaseline/>

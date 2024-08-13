@@ -21,26 +21,10 @@ export const useAuth = () => {
     return context;
 };
 
-export const AuthProvider = ({children}: { children: React.ReactNode }) => {
+export const AuthProvider = ({children, isLoggedIn}: { children: React.ReactNode, isLoggedIn: boolean; }) => {
     const [user, setUser] = useState<any>(null);
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(isLoggedIn?? false);
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            const token = jsCookie.get('token');
-            if (token) {
-                try {
-                    const { data } = await api.get('/Account/userStatus');
-                    setUser(data);
-                    setIsLogin(true);
-                } catch (error) {
-                    console.error('Failed to fetch user:', error);
-                }
-            }
-        };
-
-        fetchUser();
-    }, []);
 
     const login = async (email: string, password: string) => {
         try {
@@ -63,9 +47,9 @@ export const AuthProvider = ({children}: { children: React.ReactNode }) => {
             await api.post('/Account/register', {
                 email,
                 password
-            }).then((response)=>{
-                jsCookie.set('token', response.token);
-                setUser(response.user);
+            }).then(({data})=>{
+                jsCookie.set('token', data.token);
+                setUser(data.user);
                 setIsLogin(true);
             }).catch((e: { message: string | undefined; }) => new Error(e.message));
         } catch (error) {

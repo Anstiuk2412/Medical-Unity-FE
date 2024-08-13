@@ -12,18 +12,17 @@ import {
     DialogTitle,
     TextField
 } from "@mui/material";
-import React, {useContext, useMemo} from "react";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import {useAuth} from "@/helpers/context/auth";
+import React from "react";
 
 export const Header = () => {
     const { user, isLogin, login, register, logout } = useAuth();
 
-    console.log(user)
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -56,7 +55,7 @@ export const Header = () => {
                                 <SearchIcon/>
                             </IconButton>
                             {
-                                isLogin ? (
+                                 isLogin ? (
                                     <Box sx={{ display: 'flex', gap: '16px' }}>
                                         <IconButton sx={{ backgroundColor: '#EFEEF0' }} aria-label="notifications">
                                             <NotificationsNoneIcon />
