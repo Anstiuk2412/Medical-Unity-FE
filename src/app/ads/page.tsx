@@ -14,7 +14,7 @@ export default function About() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'center'
                 }}
             >
                 <Typography variant="h4" component="h1" sx={{ mb: 2 }}>

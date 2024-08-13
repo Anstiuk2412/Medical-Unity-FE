@@ -1,5 +1,5 @@
-import {cookies} from 'next/headers';
-import {jwtDecode} from 'jwt-decode';
+import { cookies } from 'next/headers';
+import { jwtDecode } from 'jwt-decode';
 
 export const fetchIsLoggedIn = async () => {
     const cookieStore = cookies();
@@ -18,5 +18,5 @@ export const fetchIsLoggedIn = async () => {
         }
     }
 
-    return isLoggedIn
+    return isLoggedIn;
 };
