@@ -57,15 +57,20 @@ export const NavigationSection = () => {
                             padding: '24px 32px 24px 32px',
                             fontSize: '16px',
                             fontWeight: 700,
-                            textTransform: 'capitalize'
+                            textTransform: 'capitalize',
+                            ...(pathname !== button.path && {
+                                border: 'none',
+                                color: '#222222B2',
+                                '&:hover': {
+                                    border: 'none'
+                                }
+                            })
                         }}
                         href={button.path}
                         startIcon={button.icon}
                         key={button.name}
                         variant={
-                            pathname === button.path
-                                ? 'contained'
-                                : 'outlined'
+                            pathname === button.path ? 'contained' : 'outlined'
                         }
                     >
                         {button.name}
