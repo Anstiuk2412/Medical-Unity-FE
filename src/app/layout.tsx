@@ -7,6 +7,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Header } from '@/components/Header';
 import { AuthProvider } from '@/helpers/context/auth';
 import { fetchIsLoggedIn } from '@/helpers/auth/IsLogin';
+import { NavigationSection } from '@/components/NavigateSection';
+import Box from '@mui/material/Box';
+import Footer from '@/components/Footer';
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
     const isLoggedIn = await fetchIsLoggedIn();
@@ -17,10 +20,22 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                 <AppRouterCacheProvider options={{ enableCssLayer: true }}>
                     <AuthProvider isLoggedIn={isLoggedIn}>
                         <ThemeProvider theme={theme}>
-                            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                             <CssBaseline />
                             <Header />
-                            {props.children}
+                            <div className="contentContainer">
+                                <div className="content">
+                                    <NavigationSection />
+                                    <Box
+                                        sx={{
+                                            width: '100%',
+                                            paddingRight: '24px'
+                                        }}
+                                    >
+                                        {props.children}
+                                    </Box>
+                                </div>
+                            </div>
+                            <Footer />
                         </ThemeProvider>
                     </AuthProvider>
                 </AppRouterCacheProvider>

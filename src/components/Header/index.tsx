@@ -21,7 +21,7 @@ import { useAuth } from '@/helpers/context/auth';
 import React from 'react';
 
 export const Header = () => {
-    const { user, isLogin, login, register, logout } = useAuth();
+    const { isLogin, login } = useAuth();
 
     const [open, setOpen] = React.useState(false);
 
@@ -39,13 +39,21 @@ export const Header = () => {
                 <AppBar
                     position="static"
                     sx={{
+                        display: 'flex',
+                        alignItems: 'center',
                         borderBottom:
                             '1px solid var(--stroke-black-8, #00000014)',
                         boxShadow: 'none',
                         backgroundColor: '#fff'
                     }}
                 >
-                    <Toolbar sx={{ justifyContent: 'space-between' }}>
+                    <Toolbar
+                        sx={{
+                            justifyContent: 'space-between',
+                            maxWidth: '1552px',
+                            width: '100%'
+                        }}
+                    >
                         <Image
                             src="/logo.svg"
                             alt="Vercel Logo"
@@ -77,8 +85,9 @@ export const Header = () => {
                                             backgroundColor: '#0194FF',
                                             borderRadius: '50px',
                                             fontWeight: 700,
-                                            textTransform: 'capitalize'
+                                            textTransform: 'capitalize',
                                         }}
+                                        variant="contained"
                                         startIcon={<PermIdentityOutlinedIcon />}
                                     >
                                         Створити пост
@@ -91,8 +100,10 @@ export const Header = () => {
                                         fontSize: '16px',
                                         width: '272px',
                                         fontWeight: 700,
-                                        textTransform: 'capitalize'
+                                        textTransform: 'capitalize',
+                                        borderRadius: '50px'
                                     }}
+                                    variant="contained"
                                     onClick={handleClickOpen}
                                     startIcon={<PermIdentityOutlinedIcon />}
                                 >

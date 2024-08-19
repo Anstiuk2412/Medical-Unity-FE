@@ -13,17 +13,41 @@ const theme = createTheme({
         }
     },
     components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: '50px',
-                    color: '#fff', // Button text color
-                    backgroundColor: '#0194FF', // Button background color
-                    '&:hover': {
-                        backgroundColor: '#017ACC' // Button hover color
+        MuiTypography: {
+            variants: [
+                {
+                    props: { variant: 'h3' },
+                    style: {
+                        fontSize: '20px',
+                        fontWeight: 700,
+                        lineHeight: '32px'
                     }
                 }
-            }
+            ]
+        },
+        MuiButton: {
+            variants: [
+                {
+                    props: { variant: 'contained' },
+                    style: {
+                        textTransform: 'unset',
+                        borderRadius: '10px',
+                        color: '#fff',
+                        backgroundColor: '#0194FF',
+                        '&:hover': {
+                            backgroundColor: '#017ACC',
+                            boxShadow: 'none'
+                        },
+                        boxShadow: 'none'
+                    }
+                },
+                {
+                    props: { variant: 'text' },
+                    style: {
+                        textTransform: 'unset'
+                    }
+                }
+            ]
         },
         MuiAlert: {
             styleOverrides: {

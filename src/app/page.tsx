@@ -1,29 +1,43 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import { BannerCarousel } from '@/components/BannerCarousel';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import NextLink from 'next/link';
+import { HomeSortBlogsSection } from '@/components/HomeSortBlogsSection';
+import { BlogCard } from '@/components/BlogCard';
 
 export default function Home() {
+    const blogCards = Array.from({ length: 6 }, (_, index) => index + 1);
+
     return (
-        <Container maxWidth="lg">
+        <Box>
+            <BannerCarousel />
+            <HomeSortBlogsSection />
             <Box
                 sx={{
-                    my: 4,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center'
+                    display: 'grid',
+                    gridTemplateColumns: 'minmax(0, 895px) minmax(0, 370px)',
+                    gap: '24px'
                 }}
             >
-                <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-                    Material UI - Next.js App Router example in TypeScript
-                </Typography>
-                <Link href="/about" color="secondary" component={NextLink}>
-                    Go to the about page
-                </Link>
+                <Box
+                    sx={{
+                        display: 'grid',
+                        gap: '24px'
+                    }}
+                >
+                    {blogCards.map((card, index) => (
+                        <BlogCard key={index} />
+                    ))}
+                </Box>
+                <Box>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            height: '245px',
+                            border: '1px solid #ebebeb'
+                        }}
+                    ></Box>
+                </Box>
             </Box>
-        </Container>
+        </Box>
     );
 }
