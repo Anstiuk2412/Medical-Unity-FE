@@ -1,6 +1,9 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import Typography from '@mui/material/Typography';
+import Skeleton from '@mui/material/Skeleton';
+import Button from '@mui/material/Button';
+import { BlogTag } from '@/components/BlogTag';
 
 export const BlogCard = () => {
     return (
@@ -16,6 +19,10 @@ export const BlogCard = () => {
             }}
         >
             <Box>
+                <Skeleton variant="rounded" width={302} height={245} />
+            </Box>
+            <Box>
+                <BlogTag>Розробка</BlogTag>
                 <Typography variant="h3">
                     Як керувати віддаленою Zigbee-мережею за допомогою WireGuard
                 </Typography>
