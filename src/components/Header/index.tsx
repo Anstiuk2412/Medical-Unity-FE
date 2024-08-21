@@ -85,7 +85,7 @@ export const Header = () => {
                                             backgroundColor: '#0194FF',
                                             borderRadius: '50px',
                                             fontWeight: 700,
-                                            textTransform: 'capitalize',
+                                            textTransform: 'capitalize'
                                         }}
                                         variant="contained"
                                         startIcon={<PermIdentityOutlinedIcon />}

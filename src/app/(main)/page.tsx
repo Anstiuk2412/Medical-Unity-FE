@@ -23,7 +23,7 @@ export default function Home() {
                 <Box
                     sx={{
                         display: 'grid',
-                        gap: '24px',
+                        gap: '24px'
                     }}
                 >
                     {blogCards.map((card, index) => (

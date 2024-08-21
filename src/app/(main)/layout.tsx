@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './globals.css';
+import '@/app/globals.css';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
