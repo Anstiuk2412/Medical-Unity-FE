@@ -9,7 +9,7 @@ api.defaults.withCredentials = true;
 
 api.interceptors.request.use(
     (config) => {
-        const token = Cookies.get('token');
+        const token = Cookies.get('jwtToken');
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
