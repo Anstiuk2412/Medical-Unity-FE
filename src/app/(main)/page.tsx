@@ -14,9 +14,7 @@ export default function Home() {
             <HomeSortBlogsSection />
             <Box
                 sx={{
-                    display: 'grid',
-                    gridTemplateColumns:
-                        'calc(895 / 1289* 100%) calc(370 / 1289* 100%)',
+                    display: 'flex',
                     gap: '24px'
                 }}
             >
@@ -33,7 +31,9 @@ export default function Home() {
                 <Box
                     sx={{
                         display: 'grid',
-                        gap: '24px'
+                        gap: '24px',
+                        width: '370px',
+                        minWidth: '300px'
                     }}
                 >
                     <Skeleton variant="rounded" height={245} />

@@ -2,13 +2,25 @@
     "extends": [
         "next/core-web-vitals",
         "prettier",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:storybook/recommended"
     ],
     "rules": {
-        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
         "no-unused-vars": [
             "error",
-            { "args": "none", "varsIgnorePattern": "^_" }
+            {
+                "args": "none",
+                "varsIgnorePattern": "^_"
+            }
         ]
     }
 }

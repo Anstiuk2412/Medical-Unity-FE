@@ -28,7 +28,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                                     <Box
                                         sx={{
                                             width: '100%',
-                                            paddingRight: '24px'
+                                            paddingRight: '24px',
+                                            maxWidth: '1313px'
                                         }}
                                     >
                                         {props.children}

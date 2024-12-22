@@ -6,7 +6,6 @@ import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
-import SendIcon from '@mui/icons-material/Send';
 
 const Copyright = () => {
     return (
@@ -106,21 +105,27 @@ export default function Footer() {
                         item
                         sx={{
                             display: 'flex',
-                            flexDirection: 'column'
+                            flexDirection: 'column',
+                            gap: '14px'
                         }}
                     >
                         Підписуйтесь на наші новини і акції!
-                        <Box>
+                        <Box sx={{ display: 'flex', gap: '12px' }}>
                             <TextField
                                 id="outlined-multiline-flexible"
                                 label="Введіть свій email"
                                 multiline
                                 maxRows={4}
                             />
-                            <Button
-                                variant="contained"
-                                endIcon={<SendIcon />}
-                            />
+                            <Button variant="contained" sx={{ height: '100%' }}>
+                                <Image
+                                    src="/arrow.svg"
+                                    alt="Vercel Logo"
+                                    width={19.5}
+                                    height={19.5}
+                                    className="dark:invert"
+                                />
+                            </Button>
                         </Box>
                     </Grid>
                 </Grid>
