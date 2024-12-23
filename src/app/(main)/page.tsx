@@ -15,13 +15,17 @@ export default function Home() {
             <Box
                 sx={{
                     display: 'flex',
-                    gap: '24px'
+                    gap: '24px',
+                    flexWrap: 'wrap'
                 }}
             >
                 <Box
                     sx={{
                         display: 'grid',
-                        gap: '24px'
+                        gap: '24px',
+                        maxWidth: '895px',
+                        flex: '1 1 375px',
+                        minWidth: '375px'
                     }}
                 >
                     {blogCards.map((card, index) => (
@@ -32,8 +36,10 @@ export default function Home() {
                     sx={{
                         display: 'grid',
                         gap: '24px',
-                        width: '370px',
-                        minWidth: '300px'
+                        width: '100%',
+                        flex: '1 1 0',
+                        minWidth: '200px',
+                        maxWidth: '370px'
                     }}
                 >
                     <Skeleton variant="rounded" height={245} />

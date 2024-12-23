@@ -19,6 +19,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { useAuth } from '@/helpers/context/auth';
 import React from 'react';
+import Link from '@mui/material/Link';
 
 export const Header = () => {
     const { isLogin, login } = useAuth();
@@ -54,14 +55,16 @@ export const Header = () => {
                             width: '100%'
                         }}
                     >
-                        <Image
-                            src="/logo.svg"
-                            alt="Vercel Logo"
-                            className="dark:invert"
-                            width={192}
-                            height={32}
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/logo.svg"
+                                alt="Vercel Logo"
+                                className="dark:invert"
+                                width={192}
+                                height={32}
+                                priority
+                            />
+                        </Link>
                         <Box sx={{ display: 'flex', gap: '16px' }}>
                             <IconButton
                                 sx={{ backgroundColor: '#EFEEF0' }}

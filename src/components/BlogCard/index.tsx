@@ -15,21 +15,15 @@ export const BlogCard = () => {
                 flexWrap: 'wrap',
                 gap: '32px',
                 border: '1px solid #ebebeb',
-                borderRadius: '12px',
-                maxWidth: '895px'
+                borderRadius: '12px'
             }}
         >
             <Box>
-                <Skeleton
-                    variant="rounded"
-                    width={302}
-                    height={245}
-                />
+                <Skeleton variant="rounded" width={302} height={245} />
             </Box>
             <Box
                 sx={{
-                    flex: '1',
-                    minWidth: '320px'
+                    flex: '1'
                 }}
             >
                 <BlogTag>Розробка</BlogTag>

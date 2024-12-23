@@ -10,7 +10,7 @@ import SideMenu from '@/components/SideMenu';
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
     const [mode, setMode] = React.useState<PaletteMode>('light');
-    const [showCustomTheme, setShowCustomTheme] = React.useState(true);
+    const [showCustomTheme] = React.useState(true);
     const dashboardTheme = createTheme(getDashboardTheme(mode));
     const defaultTheme = createTheme({ palette: { mode } });
     // This code only runs on the client side, to determine the system color preference

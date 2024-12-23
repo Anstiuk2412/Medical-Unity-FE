@@ -4,7 +4,6 @@ import { SvgIconProps } from '@mui/material/SvgIcon';
 import { buttonBaseClasses } from '@mui/material/ButtonBase';
 import { dividerClasses } from '@mui/material/Divider';
 import { menuItemClasses } from '@mui/material/MenuItem';
-import { selectClasses } from '@mui/material/Select';
 import { tabClasses } from '@mui/material/Tab';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 import { gray, brand } from '../themePrimitives';
@@ -64,6 +63,7 @@ export const navigationCustomizations: Components<Theme> = {
     },
     MuiSelect: {
         defaultProps: {
+            // eslint-disable-next-line react/display-name
             IconComponent: React.forwardRef<SVGSVGElement, SvgIconProps>(
                 (props, ref) => (
                     <UnfoldMoreRoundedIcon
@@ -86,10 +86,6 @@ export const navigationCustomizations: Components<Theme> = {
                     backgroundColor: theme.palette.background.paper,
                     boxShadow: 'none'
                 },
-                [`&.${selectClasses.focused}`]: {
-                    outlineOffset: 0,
-                    borderColor: gray[400]
-                },
                 '&:before, &:after': {
                     display: 'none'
                 },
@@ -103,10 +99,6 @@ export const navigationCustomizations: Components<Theme> = {
                         borderColor: alpha(gray[700], 0.7),
                         backgroundColor: theme.palette.background.paper,
                         boxShadow: 'none'
-                    },
-                    [`&.${selectClasses.focused}`]: {
-                        outlineOffset: 0,
-                        borderColor: gray[900]
                     },
                     '&:before, &:after': {
                         display: 'none'

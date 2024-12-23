@@ -56,35 +56,33 @@ export const NavigationSection = () => {
                 padding: '0 24px'
             }}
         >
-                {
-                    buttons.map((button) => (
-                        <Button
-                            sx={{
-                                minWidth: '239px',
-                                height: '68px',
-                                padding: '24px 32px 24px 32px',
-                                fontSize: '16px',
-                                fontWeight: 700,
-                                textTransform: 'capitalize',
-                                ...(pathname !== button.path && {
-                                    border: 'none',
-                                    color: '#222222B2',
-                                    '&:hover': {
-                                        border: 'none'
-                                    }
-                                })
-                            }}
-                            href={button.path}
-                            startIcon={button.icon}
-                            key={button.name}
-                            variant={
-                                pathname === button.path ? 'contained' : 'outlined'
+            {buttons.map((button) => (
+                <Button
+                    sx={{
+                        minWidth: '239px',
+                        height: '68px',
+                        padding: '24px 32px 24px 32px',
+                        fontSize: '16px',
+                        fontWeight: 700,
+                        textTransform: 'capitalize',
+                        ...(pathname !== button.path && {
+                            border: 'none',
+                            color: '#222222B2',
+                            '&:hover': {
+                                border: 'none'
                             }
-                        >
-                            {button.name}
-                        </Button>
-                    ))
-                }
+                        })
+                    }}
+                    href={button.path}
+                    startIcon={button.icon}
+                    key={button.name}
+                    variant={
+                        pathname === button.path ? 'contained' : 'outlined'
+                    }
+                >
+                    {button.name}
+                </Button>
+            ))}
         </Box>
     );
 };

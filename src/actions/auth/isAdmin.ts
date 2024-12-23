@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 
 export const isAdmin = async () => {
     try {
-        const cookieStore = cookies();
+        const cookieStore = await cookies();
         const token = cookieStore.get('jwtToken')?.value;
         return await api
             .get('/User/admin-api', {

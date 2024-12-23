@@ -5,12 +5,12 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { AuthProvider } from '@/helpers/context/auth';
 import { fetchIsLoggedIn } from '@/helpers/auth/IsLogin';
 import Box from '@mui/material/Box';
-import { isAdmin } from '@/actions/auth/isAdmin';
-import { notFound } from 'next/navigation';
+//import { isAdmin } from '@/actions/auth/isAdmin';
+//import { notFound } from 'next/navigation';
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
     const isLoggedIn = await fetchIsLoggedIn();
-    const { data } = await isAdmin();
+    //const { data } = await isAdmin();
 
     // if (!data) {
     //     notFound();

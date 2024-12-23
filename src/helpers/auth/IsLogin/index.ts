@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 import { jwtDecode } from 'jwt-decode';
 
 export const fetchIsLoggedIn = async () => {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('jwtToken')?.value;
 
     let isLoggedIn = false;

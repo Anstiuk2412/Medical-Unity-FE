@@ -44,6 +44,7 @@ const theme = createTheme({
                 {
                     props: { variant: 'text' },
                     style: {
+                        borderRadius: '10px',
                         textTransform: 'unset'
                     }
                 }
